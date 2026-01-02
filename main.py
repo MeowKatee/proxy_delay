@@ -16,7 +16,7 @@ URL = "https://cp.cloudflare.com/generate_204/"
 TIMEOUT = 3.5
 INTERVAL = 0.20  # 每个地区的测试间隔
 THRESHOLD_GOOD = 60
-THRESHOLD_BAD = 100
+THRESHOLD_BAD = 200
 THRESHOLD_LOSS = 1000
 
 # 多个SOCKS代理
@@ -160,7 +160,7 @@ def refresh_display():
                 f"发 {stats['sent']:<5} | "
                 f"丢 {stats['loss']:<4} ({loss_rate:5.2f}%) | "
                 f"平均 {avg:6.1f}ms | "
-                f"极值 {rtt_min:.1f}–{stats['rtt_max']:.1f}ms | "
+                f"极值 {rtt_min:6.1f}ms - {stats['rtt_max']:6.1f}ms | "
                 f"{stats['last_status']}"
             )
             print(line)
